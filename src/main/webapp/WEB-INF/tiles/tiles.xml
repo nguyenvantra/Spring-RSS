@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Admin Definition -->
+	<definition name="admin-definition" template="/WEB-INF/tiles/layouts/admin.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/tiles/partials/admin/header.jsp" />
+		<put-attribute name="main" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/tiles/partials/admin/footer.jsp" />
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/static/admin/vendor/jQuery/jquery-2.2.3.min.js" />
+			<add-attribute value="/static/admin/vendor/jQueryUI/jquery-ui.min.js" />
+			<add-attribute value="/static/admin/vendor/bootstrap/js/bootstrap.min.js" />
+			<add-attribute
+				value="/static/admin/vendor/datatables/jquery.dataTables.min.js" />
+			<add-attribute
+				value="/static/admin/vendor/datatables/dataTables.bootstrap.min.js" />
+			<add-attribute
+				value="/static/admin/vendor/sparkline/jquery.sparkline.min.js" />
+			<add-attribute
+				value="/static/admin/vendor/slimScroll/jquery.slimscroll.min.js" />
+			<add-attribute value="/static/admin/vendor/fastclick/fastclick.js" />
+			<add-attribute value="/static/admin/dist/js/app.min.js" />
+			<add-attribute value="/static/admin/dist/js/custom.js" />
+		</put-list-attribute>
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/static/admin/vendor/bootstrap/css/bootstrap.min.css" />
+			<add-attribute
+				value="/static/admin/vendor/font-awesome/css/font-awesome.min.css" />
+			<add-attribute
+				value="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+			<add-attribute value="/static/admin/dist/css/AdminLTE.min.css" />
+			<add-attribute value="/static/admin/dist/css/skins/_all-skins.min.css" />
+			<add-attribute
+				value="/static/admin/vendor/datatables/dataTables.bootstrap.css" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Security Definition -->
+	<definition name="security-definition" template="/WEB-INF/tiles/layouts/security.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="main" value="" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/static/admin/vendor/bootstrap/css/bootstrap.min.css" />
+			<add-attribute
+				value="/static/admin/vendor/font-awesome/css/font-awesome.min.css" />
+			<add-attribute
+				value="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+			<add-attribute value="/static/admin/dist/css/AdminLTE.min.css" />
+			<add-attribute value="/static/admin/dist/css/skins/_all-skins.min.css" />
+			<add-attribute
+				value="/static/admin/vendor/datatables/dataTables.bootstrap.css" />
+		</put-list-attribute>
+	</definition>
+	
+	<!-- App Definition -->
+	<definition name="app-definition" template="/WEB-INF/tiles/layouts/app.jsp" preparer="appViewPreparer" >
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/tiles/partials/app/header.jsp" />
+		<put-attribute name="main" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/partials/app/footer.jsp" />
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/static/app/vendor/bootstrap/css/bootstrap.min.css" />
+			<add-attribute value="/static/app/vendor/font-awesome/css/font-awesome.min.css" />
+			<add-attribute value="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+			<add-attribute value="/static/app/dist/css/AdminLTE.min.css" />
+			<add-attribute value="/static/app/dist/css/skins/_all-skins.min.css" />
+			<add-attribute value="/static/app/dist/css/custom.css" />
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/static/app/vendor/jQuery/jquery-2.2.3.min.js" />
+			<add-attribute value="/static/admin/vendor/jQueryUI/jquery-ui.min.js" />
+			<add-attribute value="/static/app/vendor/bootstrap/js/bootstrap.min.js" />
+			<add-attribute value="/static/app/vendor/slimScroll/jquery.slimscroll.min.js" />
+			<add-attribute value="/static/app/vendor/fastclick/fastclick.js" />
+			<add-attribute value="/static/app/dist/js/app.min.js" />
+			<add-attribute value="/static/app/dist/js/custom.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- =================================================================== -->
+	<definition name="404" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | 404 Error" />
+		<put-attribute name="main" value="/WEB-INF/pages/error/404.jsp" />
+		<put-attribute name="current" value="" />
+	</definition>
+
+	<!-- Dashboard Page -->
+	<definition name="dashboard" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | Dashboard" />
+		<put-attribute name="main" value="/WEB-INF/pages/admin/dashboard.jsp" />
+		<put-attribute name="current" value="dashboard" />
+	</definition>
+
+	<!-- User Admin Pages -->
+	<definition name="userList" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | User Manager" />
+		<put-attribute name="main" value="/WEB-INF/pages/admin/user/list.jsp" />
+		<put-attribute name="current" value="user" />
+	</definition>
+
+	<definition name="userAdd" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | User Manager" />
+		<put-attribute name="main" value="/WEB-INF/pages/admin/user/add.jsp" />
+		<put-attribute name="current" value="user" />
+	</definition>
+
+	<definition name="userEdit" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | User Manager" />
+		<put-attribute name="main" value="/WEB-INF/pages/admin/user/edit.jsp" />
+		<put-attribute name="current" value="user" />
+	</definition>
+
+	<definition name="userResetpass" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | User Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/user/resetpass.jsp" />
+		<put-attribute name="current" value="user" />
+	</definition>
+
+	<!-- Categoty Admin Pages -->
+
+	<definition name="categoryList" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | Category Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/category/list.jsp" />
+		<put-attribute name="current" value="category" />
+	</definition>
+
+	<definition name="categoryAdd" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | Category Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/category/add.jsp" />
+		<put-attribute name="current" value="category" />
+	</definition>
+
+	<definition name="categoryEdit" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | Category Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/category/edit.jsp" />
+		<put-attribute name="current" value="category" />
+	</definition>
+
+	<!-- RSS Admin Pages -->
+	<definition name="rssList" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | RSS Manager" />
+		<put-attribute name="main" value="/WEB-INF/pages/admin/rss/list.jsp" />
+		<put-attribute name="current" value="rss" />
+	</definition>
+
+	<definition name="rssAdd" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | RSS Manager" />
+		<put-attribute name="main" value="/WEB-INF/pages/admin/rss/add.jsp" />
+		<put-attribute name="current" value="rss" />
+	</definition>
+
+	<definition name="rssEdit" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | RSS Manager" />
+		<put-attribute name="main" value="/WEB-INF/pages/admin/rss/edit.jsp" />
+		<put-attribute name="current" value="rss" />
+	</definition>
+
+	<!-- RSSLink Admin Pages -->
+
+	<definition name="rsslinkList" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | RSS Link Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/rsslink/list.jsp" />
+		<put-attribute name="current" value="rsslink" />
+	</definition>
+
+	<definition name="rsslinkAdd" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | RSS Link Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/rsslink/add.jsp" />
+		<put-attribute name="current" value="rsslink" />
+	</definition>
+
+	<definition name="rsslinkEdit" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | RSS Link Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/rsslink/edit.jsp" />
+		<put-attribute name="current" value="rsslink" />
+	</definition>
+
+	<!-- Articles Admin Pages -->
+	<definition name="articleList" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | Article Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/article/list.jsp" />
+		<put-attribute name="current" value="article" />
+	</definition>
+
+	<definition name="articleAdd" extends="admin-definition">
+		<put-attribute name="main" value="/WEB-INF/pages/admin/article/add.jsp"/>
+		<put-attribute name="title" value="Mi-Times | Article Manager" />
+		<put-attribute name="current" value="article" />
+	</definition>
+
+	<definition name="articleEdit" extends="admin-definition">
+		<put-attribute name="title" value="Mi-Times | Article Manager" />
+		<put-attribute name="main"
+			value="/WEB-INF/pages/admin/article/edit.jsp" />
+		<put-attribute name="current" value="article" />
+	</definition>
+
+	<definition name="articleData" template="/WEB-INF/pages/admin/article/data.jsp">
+	</definition>
+
+	<!-- =================================================================== -->
+	<!-- Login Page -->
+	<definition name="login" extends="security-definition">
+		<put-attribute name="title" value="Mi-Times | Login" />
+		<put-attribute name="main" value="/WEB-INF/pages/security/login.jsp" />
+	</definition>
+	
+	<!-- =================================================================== -->
+	<!-- Home Page -->
+	<definition name="home" extends="app-definition">
+		<put-attribute name="title" value="Mi-Times | Home" />
+		<put-attribute name="main" value="/WEB-INF/pages/app/index.jsp" />
+	</definition>
+	
+	<!-- Article Page -->
+	<definition name="articleShow" extends="app-definition">
+		<put-attribute name="title" value="Mi-Times | Show Article" />
+		<put-attribute name="main" value="/WEB-INF/pages/app/article.jsp" />
+	</definition>
+	
+	<definition name="dataloadmore" template="/WEB-INF/pages/app/dataloadmore.jsp">
+	</definition>
+
+</tiles-definitions>
